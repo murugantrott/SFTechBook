@@ -1,0 +1,18 @@
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon icon-name="standard:account" size="small"></lightning-icon>
+            Account Creation Using Apex Controller
+        </h3>
+        <div slot="footer">
+                <lightning-button label="Create Account" onclick={handleSaveChange} variant="brand" ></lightning-button>
+                <lightning-badge label={accountId}></lightning-badge> 
+        </div>
+        <p class="slds-p-horizontal_small">
+            <lightning-input label="Account Name" type="text" value={accountRecord.Name} onchange={handleNameChange} ></lightning-input> 
+            <lightning-input label="Account Type" type="text" value={accountRecord.Type} onchange={handleTypeChange} ></lightning-input> 
+            <lightning-input label="Account Phone" type="number" value={accountRecord.Phone} onchange={handlePhoneChange} ></lightning-input> 
+        </p>
+    </lightning-card>
+    
+</template>

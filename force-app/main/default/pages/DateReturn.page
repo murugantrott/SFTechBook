@@ -1,0 +1,7 @@
+<apex:page >
+    Today date: {!today()} <br/>
+    {!month(today())} <br/>
+    {!day(today())} <br/>
+    {!year(today())} <br/>
+
+</apex:page>

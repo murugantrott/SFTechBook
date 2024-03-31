@@ -1,0 +1,32 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" 
+ access='global'>
+    <aura:attribute name="isModalOpen" type="boolean" default="false" /> 
+    <aura:attribute name="results" type="string" default="" />
+    <aura:attribute name="flowConfig" type="string" default="" />
+    <aura:attribute name="flowHeader" type="string" default="New Contract" />
+
+    <aura:if isTrue="{!v.isModalOpen}">
+        <!-- Modal/Popup Box starts here-->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box Header Starts here-->
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close" size="large" onclick="{! c.closeModal }" alternativeText="Close"
+                        variant="bare-inverse" class="slds-modal__close" />
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{!v.flowHeader}</h2>
+                </header>
+                <!--Modal/Popup Box Body Starts here-->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning:flow aura:id="flow" onstatuschange="{!c.handleFlowStatusChange}"/> 
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+
+    <!-- Modal to show the Contract after Flow runs-->
+
+    <!-- All Contract Actions -->
+
+</aura:component>
